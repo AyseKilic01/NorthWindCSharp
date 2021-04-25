@@ -36,15 +36,15 @@
             this.txtUnit = new System.Windows.Forms.TextBox();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.lblUName = new DevExpress.XtraEditors.LabelControl();
             this.txtUStock = new System.Windows.Forms.TextBox();
             this.lblUUnit = new DevExpress.XtraEditors.LabelControl();
             this.txtUUnit = new System.Windows.Forms.TextBox();
             this.lblUStock = new DevExpress.XtraEditors.LabelControl();
             this.txtUName = new System.Windows.Forms.TextBox();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnRemove = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -132,6 +132,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add a product";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Appearance.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAdd.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Appearance.Options.UseBackColor = true;
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.Appearance.Options.UseForeColor = true;
+            this.btnAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.btnAdd.Location = new System.Drawing.Point(265, 175);
+            this.btnAdd.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(104, 29);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Add";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnUpdate);
@@ -148,6 +165,23 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update a product";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Appearance.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUpdate.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Appearance.Options.UseBackColor = true;
+            this.btnUpdate.Appearance.Options.UseFont = true;
+            this.btnUpdate.Appearance.Options.UseForeColor = true;
+            this.btnUpdate.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.btnUpdate.Location = new System.Drawing.Point(241, 175);
+            this.btnUpdate.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(128, 29);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Update";
             // 
             // lblUName
             // 
@@ -203,40 +237,6 @@
             this.txtUName.Size = new System.Drawing.Size(214, 27);
             this.txtUName.TabIndex = 4;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Appearance.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAdd.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Appearance.Options.UseBackColor = true;
-            this.btnAdd.Appearance.Options.UseFont = true;
-            this.btnAdd.Appearance.Options.UseForeColor = true;
-            this.btnAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btnAdd.Location = new System.Drawing.Point(265, 175);
-            this.btnAdd.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
-            this.btnAdd.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(104, 29);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Add";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Appearance.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUpdate.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Appearance.Options.UseBackColor = true;
-            this.btnUpdate.Appearance.Options.UseFont = true;
-            this.btnUpdate.Appearance.Options.UseForeColor = true;
-            this.btnUpdate.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btnUpdate.Location = new System.Drawing.Point(241, 175);
-            this.btnUpdate.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
-            this.btnUpdate.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(128, 29);
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Update";
-            // 
             // btnRemove
             // 
             this.btnRemove.Appearance.BackColor = System.Drawing.Color.PaleVioletRed;
@@ -267,6 +267,7 @@
             this.Name = "Product";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product";
+            this.Load += new System.EventHandler(this.Product_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

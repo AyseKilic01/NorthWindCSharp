@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NortWindCSharp.Layouts
 {
-   public class Product
+   public class Products
     {
         public int Id { get; set; }
         public string Name { get; set; }

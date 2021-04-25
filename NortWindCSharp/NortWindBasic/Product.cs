@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NortWindCSharp.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,14 @@ namespace NortWindCSharp.NortWindBasic
         public Product()
         {
             InitializeComponent();
+        }
+
+        private void Product_Load(object sender, EventArgs e)
+        {
+            using(NWContext context = new NWContext())
+            {
+                dgwProducts.DataSource = context.products.ToList();
+            }
         }
     }
 }
