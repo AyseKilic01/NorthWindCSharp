@@ -25,5 +25,10 @@ namespace NortWindCSharp
             frm.Show();
             this.Hide();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

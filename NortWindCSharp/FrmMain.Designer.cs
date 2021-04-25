@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnProduct = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProduct
@@ -41,7 +44,7 @@
             this.btnProduct.Appearance.Options.UseFont = true;
             this.btnProduct.Appearance.Options.UseForeColor = true;
             this.btnProduct.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btnProduct.Location = new System.Drawing.Point(30, 12);
+            this.btnProduct.Location = new System.Drawing.Point(30, 122);
             this.btnProduct.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.btnProduct.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnProduct.Name = "btnProduct";
@@ -59,24 +62,37 @@
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.Appearance.Options.UseForeColor = true;
             this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btnExit.Location = new System.Drawing.Point(1116, 409);
+            this.btnExit.Location = new System.Drawing.Point(927, 409);
             this.btnExit.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.btnExit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(146, 29);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.ContentImage = ((System.Drawing.Image)(resources.GetObject("panelControl1.ContentImage")));
+            this.panelControl1.Location = new System.Drawing.Point(30, 32);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1061, 68);
+            this.panelControl1.TabIndex = 12;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1274, 450);
+            this.ClientSize = new System.Drawing.Size(1114, 450);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnProduct);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,6 +101,7 @@
 
         private DevExpress.XtraEditors.SimpleButton btnProduct;
         private DevExpress.XtraEditors.SimpleButton btnExit;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }
 

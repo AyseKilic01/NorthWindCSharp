@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product));
             this.dgwProducts = new System.Windows.Forms.DataGridView();
             this.lblName = new DevExpress.XtraEditors.LabelControl();
             this.lblUnit = new DevExpress.XtraEditors.LabelControl();
@@ -46,20 +49,49 @@
             this.lblUStock = new DevExpress.XtraEditors.LabelControl();
             this.txtUName = new System.Windows.Forms.TextBox();
             this.btnRemove = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgwProducts
             // 
             this.dgwProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgwProducts.BackgroundColor = System.Drawing.Color.FloralWhite;
+            this.dgwProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgwProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgwProducts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgwProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwProducts.Location = new System.Drawing.Point(28, 45);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwProducts.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgwProducts.EnableHeadersVisualStyles = false;
+            this.dgwProducts.GridColor = System.Drawing.Color.FloralWhite;
+            this.dgwProducts.Location = new System.Drawing.Point(28, 111);
             this.dgwProducts.Name = "dgwProducts";
+            this.dgwProducts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgwProducts.RowHeadersVisible = false;
             this.dgwProducts.RowTemplate.Height = 24;
+            this.dgwProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwProducts.Size = new System.Drawing.Size(1061, 189);
             this.dgwProducts.TabIndex = 0;
+            this.dgwProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwProducts_CellClick);
             // 
             // lblName
             // 
@@ -125,7 +157,7 @@
             this.groupBox1.Controls.Add(this.lblStock);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox1.Location = new System.Drawing.Point(28, 255);
+            this.groupBox1.Location = new System.Drawing.Point(28, 321);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(402, 210);
             this.groupBox1.TabIndex = 7;
@@ -148,6 +180,7 @@
             this.btnAdd.Size = new System.Drawing.Size(104, 29);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // groupBox2
             // 
@@ -159,7 +192,7 @@
             this.groupBox2.Controls.Add(this.lblUStock);
             this.groupBox2.Controls.Add(this.txtUName);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox2.Location = new System.Drawing.Point(690, 255);
+            this.groupBox2.Location = new System.Drawing.Point(690, 321);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(399, 210);
             this.groupBox2.TabIndex = 8;
@@ -182,6 +215,7 @@
             this.btnUpdate.Size = new System.Drawing.Size(128, 29);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // lblUName
             // 
@@ -246,24 +280,54 @@
             this.btnRemove.Appearance.Options.UseFont = true;
             this.btnRemove.Appearance.Options.UseForeColor = true;
             this.btnRemove.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btnRemove.Location = new System.Drawing.Point(931, 12);
+            this.btnRemove.Location = new System.Drawing.Point(402, 566);
             this.btnRemove.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.btnRemove.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(128, 29);
             this.btnRemove.TabIndex = 9;
             this.btnRemove.Text = "Remove";
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnExit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Appearance.Options.UseForeColor = true;
+            this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.btnExit.Location = new System.Drawing.Point(975, 566);
+            this.btnExit.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.btnExit.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(128, 29);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.ContentImage = ((System.Drawing.Image)(resources.GetObject("panelControl1.ContentImage")));
+            this.panelControl1.Location = new System.Drawing.Point(28, 37);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1061, 68);
+            this.panelControl1.TabIndex = 11;
             // 
             // Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 490);
+            this.ClientSize = new System.Drawing.Size(1115, 609);
+            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgwProducts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Product";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product";
@@ -273,6 +337,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,5 +362,7 @@
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraEditors.SimpleButton btnRemove;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }

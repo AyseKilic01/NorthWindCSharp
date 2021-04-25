@@ -10,6 +10,6 @@ namespace NortWindCSharp.Entity
 {
     public class NWContext : DbContext
     {
-        public DbSet<Products> products { get; set; }
+        public DbSet<Products> Products { get; set; }
     }
 }
