@@ -46,5 +46,30 @@ namespace NortWindCSharp.DAL
                 context.SaveChanges();
             }
         }
+        public List<Products> GetUnitePrice(decimal price)
+        {
+            using (NWContext context = new NWContext())
+            {
+                return context.Products.Where(x => x.UnitPrice >= price).ToList();
+            }
+        }
+        public List<Products> GetUnitePrice(decimal max, decimal min)
+        {
+            using (NWContext context = new NWContext())
+            {
+                return context.Products.Where(x => x.UnitPrice >= min && x.UnitPrice < max).ToList();
+                //where ile direkt tablodan koşul ile veri alabiliyoruz
+            }
+        }
+        public Products GetByID(int id)
+        {
+            using (NWContext context = new NWContext())
+            {
+                return context.Products.FirstOrDefault(x => x.ID == id);
+                // return context.Products.SingleOrDefault(x => x.ID == id);
+                //tabloda eğer gönderilen id varsa veri çek yoksa default null gönder firstordefault
+                //tabloda eğer gönderilen id birden fazla ise sadece bir veriyi çek yoksa default null gönder singleordefault
+            }
+        }
     }
 }
